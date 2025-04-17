@@ -29,7 +29,6 @@ textarea {
     font-family: var(--page-font);
     cursor: pointer;
     border-style: none;
-    border-radius: 4px;
     transition: background-color var(--anim);
 }
 
@@ -175,7 +174,7 @@ textarea {
 
     font-size: 48px;
     font-weight: 500;
-    max-width: 600px;
+    max-width: 660px;
 }
 
 .section-title::after {
@@ -337,4 +336,161 @@ swiper-container {
 .socials-link:focus {
     background-color: var(--accent-color);
     cursor: pointer;
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.services-list li {
+    position: relative;
+    transition: transform var(--anim);
+}
+
+.services-list li:hover,
+.services-list li:focus {
+    transform: scale(1.07); 
+}
+
+.services-text {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 1;
+
+    font-size: 24px;
+    font-weight: 700;
+    padding-top: 14px;
+    padding-left: 14px;
+    width: 228px;
+    height: 76px;
+}
+
+.black {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--accent-color);
+}
+
+.white {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--main-text-color);
+}
+
+.contacts-services-title {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.contacts-services-address {
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    font-size: 24px;
+    text-align: center;
+}
+
+.services-btn {
+    font-size: 32px;
+    font-weight: 700;
+
+    background-color: var(--second-color);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 25px 80px;
+}
+
+.contacts-services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: var(--accent-bg-color);
+}
+
+.services-hero {
+    display: block;
+    background-image: url(../images/services-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 276px;
+    padding-left: 106px;
+    padding-right: 106px;
+    padding-bottom: 270px;
+    max-width: 1084px;
+}
+
+.services-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+
+    font-weight: 700;
+    font-size: 64px;
+}
+
+.services-title-right {
+    text-align: right;
+}
+
+.services-title-left::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    transform: translateY(16px);
+
+    width: 360px;
+    height: 1px;
+    display: inline-block;
+
+    background-color: var(--accent-color);
+    border-radius: 1px;
+}
+
+.services-title-right::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    transform: translateY(16px);
+
+    width:360px;
+    height: 1px;
+    display: inline-block;
+
+    background-color: var(--accent-color);
+    border-radius: 1px;
+}
+
+.hair-hero {
+    background-image: url(../images/hair-hero.jpg);
+}
+
+.hair-title {
+    font-size: 48px;
+}
+
+.item {
+    background-color: var(--second-color);
+    padding-top: 30px;
+    padding-left: 35px;
+}
+
+.item-text-title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.item-text-desc {
+    max-width: 520px;
 }
