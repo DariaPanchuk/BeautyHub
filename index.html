@@ -11,6 +11,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body class="page">
@@ -28,7 +29,7 @@
                         <li><a class="link nav-link" href="">Контакти</a></li>
                     </ul>
                 </nav>
-                <button class="btn header-button" type="button">Онлайн <br>запис</button>
+                <button class="btn header-button" type="button" data-toggle="modal" data-target="#myModal" id="openModal">Онлайн <br>запис</button>
             </div>
         </div>
     </header>
@@ -148,6 +149,41 @@
         </div>
     </footer>
 
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="modal-container">
+                <p class="modal-title">Заплануйте візит на зручний час</p>
+            <form class="modal-form">
+                <label class="modal-label" for="specialist">Фахівець</label>
+                <select class="options" id="specialist" name="specialist">
+                    <option id="placeholder" value="" disabled selected>Оберіть фахівця</option>
+                    <option class="options-item " value="specialist1">Фахівець 1</option>
+                    <option class="options-item " value="specialist2">Фахівець 2</option>
+                    <option class="options-item " value="specialist3">Фахівець 3</option>
+                    <option class="options-item " value="specialist4">Фахівець 4</option>
+                </select>
+        
+                <label class="modal-label" for="service">Послуга</label>
+                <select class="options" id="service" name="service">
+                    <option class="placeholder" disabled selected>Оберіть послугу</option>
+                    <option class="options-item " value="service1">Послуга 1</option>
+                    <option class="options-item " value="service2">Послуга 2</option>
+                    <option class="options-item " value="service3">Послуга 3</option>
+                    <option class="options-item " value="service4">Послуга 4</option>
+                </select>
+        
+                <label class="modal-label" for="datetime">Дата та час</label>
+                <input class="modal-text" id="datetime" name="datetime" placeholder="Оберіть дату та час" readonly>
+        
+                <button class="btn modal-btn" type="submit" value="Записатись">Оформити візит</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    
+
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none">
         <defs>
         <symbol id="icon-telegram" viewBox="0 0 32 32">
@@ -164,9 +200,11 @@
         </defs>
     </svg>
         
-        <script defer src="svgxuse.js"></script>
+    <script defer src="svgxuse.js"></script>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="./scripts.js"></script>
 </body>
 </html>
