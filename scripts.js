@@ -8,22 +8,24 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 const modal = document.getElementById("myModal");
-const btn = document.getElementById("openModal");
+const btns = document.querySelectorAll(".openModal"); 
 const span = document.getElementById("closeModal");
 
-btn.onclick = function() {
-    modal.style.display = "block";
-    document.body.classList.add("no-scroll"); 
-}
+btns.forEach(btn => {
+    btn.onclick = function() {
+        modal.style.display = "block";
+        document.body.classList.add("no-scroll");
+    }
+});
 
 span.onclick = function() {
     modal.style.display = "none";
-    document.body.classList.remove("no-scroll"); 
+    document.body.classList.remove("no-scroll");
 }
 
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
-        document.body.classList.remove("no-scroll"); 
+        document.body.classList.remove("no-scroll");
     }
 }

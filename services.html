@@ -11,6 +11,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body class="page">
@@ -22,13 +23,14 @@
                 </div>
                 <nav>
                     <ul class="list navigation">
-                        <li><a class="link nav-link" href="">Послуги</a></li>
-                        <li><a class="link nav-link" href="">Ціни</a></li>
-                        <li><a class="link nav-link" href="">Про нас</a></li>
-                        <li><a class="link nav-link" href="">Контакти</a></li>
+                        <li><a class="link nav-link" href="./services.html">Послуги</a></li>
+                        <li><a class="link nav-link" href="./services.html">Ціни</a></li>
+                        <li><a class="link nav-link" href="./services.html">Про нас</a></li>
+                        <li><a class="link nav-link" href="./services.html">Контакти</a></li>
+                        <li><a class="link nav-link" href="./services.html">Авторизація</a></li>
                     </ul>
                 </nav>
-                <button class="btn header-button" type="button">Онлайн <br>запис</button>
+                <button class="btn header-button openModal" type="button" data-toggle="modal" data-target="#myModal">Онлайн <br>запис</button>
             </div>
         </div>
     </header>
@@ -48,25 +50,25 @@
                     <li><a class="link" href="./hairdressing.html">
                         <img class="services-img" src="./images/services-1.jpg" alt="Перукарські послуги">
                         <p class="black services-text"><span class="black-text">Перукарські послуги</span></p></a></li>
-                    <li><a class="link" href="">
+                    <li><a class="link" href="./hairdressing.html">
                         <img class="services-img" src="./images/services-2.jpg" alt="Нігтьовий сервіс">
                         <p class="white services-text"><span class="white-text">Нігтьовий сервіс</span></p></a></li>
-                    <li><a class="link" href="">
+                    <li><a class="link" href="./hairdressing.html">
                         <img class="services-img" src="./images/services-3.jpg" alt="Косметологічні послуги">
                         <p class="black services-text"><span class="black-text">Косметологічні послуги</span></p></a></li>
-                    <li><a class="link" href="">
+                    <li><a class="link" href="./hairdressing.html">
                         <img class="services-img" src="./images/services-4.jpg" alt="Перманентний макіяж">
                         <p class="white services-text"><span class="white-text">Перманентний макіяж</span></p></a></li>
-                    <li><a class="link" href="">
+                    <li><a class="link" href="./hairdressing.html">
                         <img class="services-img" src="./images/services-5.jpg" alt="Оформлення брів">
                         <p class="black services-text"><span class="black-text">Оформлення брів</span></p></a></li>
-                    <li><a class="link" href="">
+                    <li><a class="link" href="./hairdressing.html">
                         <img class="services-img" src="./images/services-6.jpg" alt="Оформлення вій">
                         <p class="white services-text"><span class="white-text">Оформлення вій</span></p></a></li>
-                    <li><a class="link" href="">
+                    <li><a class="link" href="./hairdressing.html">
                         <img class="services-img" src="./images/services-7.jpg" alt="Макіяж">
                         <p class="black services-text"><span class="black-text">Макіяж</span></p></a></li>
-                    <li><a class="link" href="">
+                    <li><a class="link" href="./hairdressing.html">
                         <img class="services-img" src="./images/services-8.jpg" alt="Масаж">
                         <p class="white services-text"><span class="white-text">Масаж</span></p></a></li>
                 </ul>
@@ -78,7 +80,7 @@
                     <br>089 547 03 49
                 </p>
                 <p class="contacts-services-address">Або натисніть активну кнопку:</p>
-                <button class="btn services-btn" type="button">Записатись на <br>послугу</button>
+                <button class="btn services-btn openModal" type="button" data-toggle="modal" data-target="#myModal">Записатись на <br>послугу</button>
             </div>
         </section>
     </main>
@@ -153,6 +155,44 @@
         </div>
     </footer>
 
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="modal-container">
+                <p class="modal-title">Заплануйте візит на зручний час</p>
+            <form class="modal-form">
+                <label class="modal-label" for="specialist">Фахівець</label>
+                <select class="options" id="specialist" name="specialist">
+                    <option id="placeholder" value="" disabled selected>Оберіть фахівця</option>
+                    <option class="options-item " value="specialist1">Фахівець 1</option>
+                    <option class="options-item " value="specialist2">Фахівець 2</option>
+                    <option class="options-item " value="specialist3">Фахівець 3</option>
+                    <option class="options-item " value="specialist4">Фахівець 4</option>
+                </select>
+        
+                <label class="modal-label" for="service">Послуга</label>
+                <select class="options" id="service" name="service">
+                    <option class="placeholder" disabled selected>Оберіть послугу</option>
+                    <option class="options-item " value="service1">Послуга 1</option>
+                    <option class="options-item " value="service2">Послуга 2</option>
+                    <option class="options-item " value="service3">Послуга 3</option>
+                    <option class="options-item " value="service4">Послуга 4</option>
+                </select>
+        
+                <label class="modal-label" for="datetime">Дата та час</label>
+                <input class="modal-text" id="datetime" name="datetime" placeholder="Оберіть дату та час" readonly>
+
+                <label class="modal-label" for="tel">Ваші контактні дані</label>
+                <input class="modal-text" id="tel" name="tel" placeholder="Введіть свій номер телефону">
+        
+                <button class="btn modal-btn" type="submit" value="Записатись">Оформити візит</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    
+
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none">
         <defs>
         <symbol id="icon-telegram" viewBox="0 0 32 32">
@@ -169,9 +209,11 @@
         </defs>
     </svg>
         
-        <script defer src="svgxuse.js"></script>
+    <script defer src="svgxuse.js"></script>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="./scripts.js"></script>
 </body>
 </html>
